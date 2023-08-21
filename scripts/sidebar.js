@@ -1,6 +1,8 @@
 window.customElements.define('sidebar-template', class extends HTMLElement{
     connectedCallback(){
         this.innerHTML = `
+        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+        <link rel="stylesheet" href="sidebar-style.css">
         <div class="sidebar">
             <div class="top">
                 <div class="logo">
@@ -13,7 +15,7 @@ window.customElements.define('sidebar-template', class extends HTMLElement{
             <img src="../images/me.jpg" alt="user" class="user-img" color="#ffffff">
             <!-- <img class="bx bx-user" class="user-img">-->
             <div>
-                <p class="bold">NAHLN User</p>
+                <p class="bold">NALHN User</p>
                 <p>Admin</p>
             </div>
         </div>
