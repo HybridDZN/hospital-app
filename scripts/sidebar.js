@@ -52,17 +52,36 @@ window.customElements.define('sidebar-template', class extends HTMLElement{
     }
 })
 
-let btn = document.querySelector('#btn')
-let sidebar = document.querySelector('.sidebar')
+document.addEventListener('DOMContentLoaded', function () {
+    let btn = document.querySelector('#btn')
+    let sidebar = document.querySelector('.sidebar')
+    let mainContent = document.querySelector('.main-content')
+    let open = sidebar.classList.contains("active")
 
-btn.addEventListener("click", () => {
-    sidebar.classList.toggle("active");
-})
+    btn.addEventListener("click", () => {
+        sidebar.classList.toggle("active");
+        resizeMainContent();
+        menuBtnChange();
+    })
 
-function menuBtnChange() {
-    if (sidebar.classList.contains("active")) {
-        closeBtn.classList.replace("bx-menu", "bx-menu-alt-right");
-    } else {
-        closeBtn.classList.replace("bx-menu-alt-right", "bx-menu");
+    function menuBtnChange() {
+        if (sidebar.classList.contains("active")) {
+            btn.classList.replace("bx-menu", "bx-menu-alt-right");
+        } else {
+            btn.classList.replace("bx-menu-alt-right", "bx-menu");
+        }
     }
-}
+
+    function resizeMainContent(){
+        if(open){
+            mainContent.style.left = '80px';
+            mainContent.style.width = 'calc(100% - 80px)'
+            open = false;
+        }
+        else if (!open){
+            mainContent.style.left = '250px';
+            mainContent.style.width = 'calc(100% - 250px)'
+            open = true;
+        }
+    }
+});
