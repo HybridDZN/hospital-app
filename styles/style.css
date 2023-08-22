@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+
+*{
+    margin: 0;
+    padding:0;
+    box-sizing: border-box;
+    font-family: "Poppins" , sans-serif;
+    /* font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; */
+}
+
+.main-content {
+    position: relative;
+    background-color: #eee;
+    min-height: 100vh;
+    top: 0px;
+    left: 80px;
+    width: calc(100% - 80px);
+    transition: all 0.5s ease;
+    padding: 1rem;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.mission, .why, .features, .join-us {
+    margin-bottom: 20px;
+}
+
+.title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.paragraph {
+    margin-bottom: 20px;
+}
+
+.highlight {
+    color: #007bff;
+}
+
+.team {
+    font-style: italic;
+}
