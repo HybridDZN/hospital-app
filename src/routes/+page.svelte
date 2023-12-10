@@ -8,12 +8,12 @@
 		let count = 0;
 		for (let item in data) {
 			output.push({
-				id: count,
+				id: 'id' + count,
 				title: item,
 				content: data[item]
 			});
+			count += 1;
 		}
-		count += 1;
 		return output;
 	}
 	items = dataAggregator(data);
