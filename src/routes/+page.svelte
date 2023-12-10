@@ -1,2 +1,22 @@
-<h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
+<script>
+	import Content from '$lib/components/Content.svelte';
+	export let data;
+	let items;
+
+	function dataAggregator(data) {
+		let output = [];
+		let count = 0;
+		for (let item in data) {
+			output.push({
+				id: count,
+				title: item,
+				content: data[item]
+			});
+		}
+		count += 1;
+		return output;
+	}
+	items = dataAggregator(data);
+</script>
+
+<Content {items} />
