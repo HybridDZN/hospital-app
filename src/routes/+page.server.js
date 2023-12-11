@@ -7,7 +7,6 @@ export async function load(){
     });
 
     let files = objects.Contents;
-
     let output = {};
 
     for (let item of files){

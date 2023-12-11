@@ -1,17 +1,21 @@
 <script>
 	import * as Accordion from '$lib/components/ui/accordion';
 	import { Button } from '$lib/components/ui/button';
-	export let items;
+	export let data;
 </script>
 
 <Accordion.Root>
-	{#each items as { id, title, content } (title)}
-		<Accordion.Item value={id}>
+	{#each Object.entries(data) as [category, documents]}
+		<Accordion.Item value={category}>
 			<Accordion.Trigger>
-				{title}
+				{category}
 			</Accordion.Trigger>
 			<Accordion.Content>
-				<Button href="/document/{content}">{content}</Button>
+				<div class="flex flex-col gap-2">
+					{#each documents as document}
+						<Button href="/document/{category}/{document}" variant="outline">{document}</Button>
+					{/each}
+				</div>
 			</Accordion.Content>
 		</Accordion.Item>
 	{/each}
