@@ -1,6 +1,7 @@
 <script>
 	import '../app.pcss';
 	import { navigating } from '$app/stores';
+	import Header from "$lib/components/Header.svelte";
 	import BarLoader from 'svelte-loading-spinners/BarLoader.svelte';
 </script>
 
@@ -9,4 +10,7 @@
 		<BarLoader size="60" color="#FF3E00" unit="px" />
 	</div>
 {/if}
+
+
+<Header />
 <slot />

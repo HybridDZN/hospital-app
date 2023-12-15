@@ -3,8 +3,7 @@
 	export let data;
 </script>
 
-<PdfViewer
-	props={{
-		data: atob(data.documentString)
-	}}
-/>
+
+<PdfViewer props = {{
+	url: data.url
+}}/>
